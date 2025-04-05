@@ -52,10 +52,10 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category', args=[self.slug])  # URL for the category
 
-    def validate_stl_file(value):
-        """Validate that the uploaded file is a valid STL file."""
-        if not value.name.endswith('.stl'):
-            raise ValidationError('Only STL files are allowed.')  # Raise error if not an STL file
+def validate_stl_file(value):
+    """Validate that the uploaded file is a valid STL file."""
+    if not value.name.endswith('.stl'):
+        raise ValidationError('Only STL files are allowed.')  # Raise error if not an STL file
 
 ## MODEL PRODUCTS FOR ONLINE SHOP
 class Product(models.Model):
