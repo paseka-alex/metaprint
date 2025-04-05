@@ -7,4 +7,4 @@ class AccountingConfig(AppConfig):
     verbose_name = 'Звітність'
     
     def ready(self):
-        import accounting.signals  # Подключаем сигналы
+        import accounting.signals 

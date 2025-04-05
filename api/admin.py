@@ -1,29 +1,32 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
-from unfold.admin import ModelAdmin
+from unfold.admin import ModelAdmin  # Custom admin base class from Unfold
 from django import forms
 
+# Try importing TokenProxy (used in recent versions of DRF); fallback to Token for older versions
 try:
     from rest_framework.authtoken.models import TokenProxy as DRFToken
 except ImportError:
     from rest_framework.authtoken.models import Token as DRFToken
 
-# Unregister existing User and Group models (if they are registered)
+# Unregister default User model from admin if already registered
 if User in admin.site._registry:
     admin.site.unregister(User)
 
+# Unregister default Group model from admin if already registered
 if Group in admin.site._registry:
     admin.site.unregister(Group)
 
-# Unregister Token if already registered
+# Unregister DRF's Token model from admin if already registered
 if DRFToken in admin.site._registry:
     admin.site.unregister(DRFToken)
 
-# Register models with Unfold
+# Register the Token model with custom admin using Unfold's ModelAdmin
 @admin.register(DRFToken)
 class TokenAdmin(ModelAdmin):
-    pass
+    pass  # You can customize the Token admin view if needed
 
+# Custom form for User admin with Ukrainian help texts
 class UserAdminForm(forms.ModelForm):
     class Meta:
         model = User
@@ -41,6 +44,7 @@ class UserAdminForm(forms.ModelForm):
             'last_login': "Остання дата входу користувача (створюється автоматично).",
         }
 
+# Custom form for Group admin with Ukrainian help texts
 class GroupAdminForm(forms.ModelForm):
     class Meta:
         model = Group
@@ -50,12 +54,14 @@ class GroupAdminForm(forms.ModelForm):
             'permissions': "Дозволи, які має група.",
         }
 
+# Custom admin class for User model
 @admin.register(User)
 class UserAdmin(ModelAdmin):
     form = UserAdminForm
-    list_display = ['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active']
-    search_fields = ['username', 'first_name', 'last_name', 'email']
-    
+    list_display = ['username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active']  # Columns in admin list view
+    search_fields = ['username', 'first_name', 'last_name', 'email']  # Fields to search by in the admin
+
+    # Organize form fields into sections with descriptions
     fieldsets = (
         (None, {
             'fields': ('username', 'first_name', 'last_name', 'email', 'password'),
@@ -71,6 +77,7 @@ class UserAdmin(ModelAdmin):
         }),
     )
 
+# Custom admin class for Group model
 @admin.register(Group)
 class GroupAdmin(ModelAdmin):
     form = GroupAdminForm
