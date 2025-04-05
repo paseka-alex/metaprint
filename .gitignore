@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.whl
+
+# Django
+*.log
+db.sqlite3
+media/
+static/
+staticfiles/
+local_settings.py
+
+# Django migrations
+*/migrations/
+
+# Environment variables
+.env
+runtime.txt
+Procfile
+secure_logs/
+
+# VS Code
+.vscode/
