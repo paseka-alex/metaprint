@@ -14,7 +14,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'False'
 log_dir = BASE_DIR / 'secure_logs'
 # Ensure the directory exists
 os.makedirs(log_dir, exist_ok=True)
@@ -23,8 +23,8 @@ WSGI_APPLICATION = 'metaapi.wsgi.application'
 
 
 ## SECURITY 
-ALLOWED_HOSTS = ['*']
-#ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'metaapi.up.railway.app']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'metaapi.up.railway.app']
 CSRF_TRUSTED_ORIGINS = [
 'https://*.railway.app'
 ]
