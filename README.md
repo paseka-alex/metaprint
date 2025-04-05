@@ -45,6 +45,7 @@ metaapi/
 
 ### 🌐 Frontend / UI (в межах Django)
 
+Використовується остання на даний момент версія Tailwind CSS.
 - Django Templates:
   - Welcome page
   - Login page
