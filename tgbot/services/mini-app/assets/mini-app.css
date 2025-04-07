@@ -1,0 +1,133 @@
+body, div, h2, .accordion-button {
+    font-family: Arial, sans-serif;
+    background-color: var(--tg-theme-bg-color, #ffffff);
+    color: var(--tg-theme-text-color, #222222);
+    color-scheme: var(--tg-color-scheme);
+}
+
+.accordion {
+    --bs-accordion-bg: unset;
+    --bs-accordion-border-color: unset;
+    border: 1px solid #ccc;
+    border-width: 0;
+    border-radius: 5px;
+    /*margin-bottom: 0px;*/
+}
+
+.accordion-header {
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+.accordion-button {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.accordion-button:focus {
+    outline: none; /* Прибирає обводку */
+    box-shadow: none; /* Забирає ефект тіні */
+}
+
+.order-form-container {
+    /*margin-bottom: 20px;*/
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.technology-form-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3b3e;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-button {
+    background-color: #23a63e;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #146d26;
+}
+
+.submit-button {
+    background-color: #a54b26;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #853819;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    appearance: none;
+    background-color: #3d3b3e;
+}
+
+select:focus {
+    border-color: #1e88e5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3d3b3e;;
+}
+
+input:focus {
+    border-color: #1e88e5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+}
+
+/*.description {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3b3e;
+    font-size: 14px;
+    color: #ffffff;
+}*/
+
+.accordion-header {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+    color: #ffffff;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #17212b;
+    color: #ffffff;
+}
+.accordion-body {
+    border: solid 1px white;
+}

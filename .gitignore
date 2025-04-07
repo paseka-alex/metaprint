@@ -1,0 +1,9 @@
+.idea
+.venv
+metaprint_userbot.session
+metaprint_userbot.session-journal
+tgbot/active_invites.txt
+logs/
+chat_logs/
+__pycache__
+tgbot/config.py

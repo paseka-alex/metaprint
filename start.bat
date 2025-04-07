@@ -1,0 +1,1 @@
+docker run --name metaprint-dev -it --rm -p 8000:8000 metaprint-dev
