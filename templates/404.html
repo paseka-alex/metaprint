@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Сторінка не знайдена</title>
+    <link rel="icon" href="{% static 'img/logo_transp.png' %}" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex justify-center items-center h-screen">
+
+    <!-- Основний контейнер -->
+    <div class="text-center">
+        <h1 class="text-6xl font-extrabold text-teal-500 animate-pulse">
+            404
+        </h1>
+        <p class="text-lg mt-4 text-gray-400">
+            Ой! Сторінку, яку ви шукаєте, не знайдено.
+        </p>
+        <a href="/" class="mt-6 inline-block px-6 py-3 rounded-lg bg-teal-700 text-white text-sm font-semibold hover:bg-teal-400 transition-colors">
+            Повернутися на головну
+        </a>
+    </div>
+
+</body>
+</html>
