@@ -1,5 +1,6 @@
 # 🧩 MetaAPI
 [![uk](https://img.shields.io/badge/lang-uk-yellow.svg)](https://github.com/paseka-alex/metaprint/blob/api/README.uk.md)
+
 **MetaAPI** is a Django-based backend project that provides an API and admin panel for managing products, orders, material accounting, and printers.
 You can currently find it deployed at: https://metaapi.up.railway.app/
 
